@@ -33,7 +33,7 @@ def my_ctask(ctask_num):
     change_id = response.one_or_none()['parent']['value']
     return change_id
 
-change_id = my_ctask('CTASK0091687')
+change_id = my_ctask('CTASK00000')
 qb = (
     pysnow.QueryBuilder()
     .field('sys_id').equals(change_id))
@@ -43,7 +43,7 @@ response = crequest.get(query=qb, stream=True).first()
 
 ctask = c.resource(api_path='/table/change_task')
 
-cnum = 'CHG0026883'
+cnum = 'CHG00000'
 change_sys_id = crequest.get(query={'number': cnum}).one()['sys_id']
 
 qb = (
